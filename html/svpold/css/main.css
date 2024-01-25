@@ -1,0 +1,453 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    color: #555;
+    font: normal 10pt Arial,Helvetica,sans-serif;
+    background: #EFEFEF;
+}
+
+#page
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: white;
+    border: 1px solid #C9E0ED;
+}
+
+#header
+{
+    margin: 0;
+    padding: 0;
+    border-top: 3px solid #C9E0ED;
+}
+
+#content
+{
+    padding: 20px;
+}
+
+#sidebar
+{
+    padding: 20px 20px 20px 0;
+}
+
+#footer
+{
+    padding: 10px;
+    margin: 10px 20px;
+    font-size: 0.8em;
+    text-align: center;
+    border-top: 1px solid #C9E0ED;
+}
+
+#logo
+{
+    padding: 10px 20px;
+    font-size: 200%;
+}
+
+#logoServer
+{
+    color: red;
+}
+
+#mainmenu
+{
+    background:white url(bg.png) repeat-x left top;
+    float: left;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+#mainmenu ul
+{
+    padding:6px 20px 5px 20px;
+    margin:0px;
+}
+
+#mainmenu ul li
+{
+    display: inline;
+}
+
+#mainmenu ul li a
+{
+    color:#ffffff;
+    background-color:transparent;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    padding:5px 8px;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+    color: #6399cd;
+    background-color:#EFF4FA;
+    text-decoration:none;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+    padding:.8em;
+    margin-bottom:1em;
+    border:2px solid #ddd;
+}
+
+div.flash-error
+{
+    background:#FBE3E4;
+    color:#8a1f11;
+    border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+    background:#FFF6BF;
+    color:#514721;
+    border-color:#FFD324;
+}
+
+div.flash-success
+{
+    background:#E6EFC2;
+    color:#264409;
+    border-color:#C6D880;
+}
+
+div.flash-error a
+{
+    color:#8a1f11;
+}
+
+div.flash-notice a
+{
+    color:#514721;
+}
+
+div.flash-success a
+{
+    color:#264409;
+}
+
+div.form .rememberMe label
+{
+    display: inline;
+}
+
+div.view
+{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs
+{
+    font-size: 0.9em;
+    padding: 5px 20px;
+}
+
+div.breadcrumbs span
+{
+    font-weight: bold;
+}
+
+div.search-form
+{
+    padding: 10px;
+    margin: 10px 0;
+    background: #eee;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+    padding: 3px 8px;
+    background: #B7D6E7;
+    border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: #298dcd;
+}
+
+.portlet-content
+{
+    font-size:0.9em;
+    margin: 0 0 15px 0;
+    padding: 5px 8px;
+    background:#EFFDFF;
+}
+
+.portlet-content ul
+{
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+
+.portlet-content li
+{
+    padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.operations li
+{
+    padding-bottom: 2px;
+}
+
+.operations li a
+{
+    font: bold 12px Arial;
+    color: #0066A4;
+    display: block;
+    padding: 2px 0 2px 8px;
+    line-height: 15px;
+    text-decoration: none;
+}
+
+.operations li a:visited
+{
+    color: #0066A4;
+}
+
+.operations li a:hover
+{
+    background: #80CFFF;
+}
+
+div.SvpTable th{
+    background:white url(bg.png) repeat-x left top;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+div.SvpTable td{
+    border:1px solid #999;
+    background-color: white;
+    padding-top : 0px;
+    padding-bottom: 0px;
+}
+
+div.SvpTable .inactivity{
+    background-color: #dadada;
+    color: red;
+}
+
+div.SvpTable .delayed td{
+    background-color: #FBC2C4;
+}
+
+.ServiceButton{
+    height: 12px;
+}
+
+span.RedMatch {
+    color: red;
+    font-weight: bold;
+}
+
+table.RecordsTable th{
+    text-align: center;
+    background-color: #0066A4;
+    color:#ffffff;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+table.RecordsTable td{
+    border: 1px solid #0066A4;
+}
+
+table.RecordsTable .num{
+    width: 5%;
+}
+
+table.RecordsTable .firstname{
+    width: 15%;
+    text-wrap: none;
+}
+
+table.RecordsTable .lastname{
+    width: 15%;
+    text-wrap: none;
+}
+
+table.RecordsTable .remarks{
+    width: 15%;
+    text-wrap: none;
+}
+
+table.RecordsTable .answer{
+    width: 25%;
+    text-wrap: none;
+}
+
+table.RecordsTable .answerv{
+    width: 25%;
+    text-wrap: none;
+}
+
+table.RecordsTableAns{
+    font: normal 10pt Arial,Helvetica,sans-serif;
+}
+
+
+table.RecordsTableAns th{
+    text-align: center;
+    background-color: #999;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+table.RecordsTableAns td{
+    border: 1px solid #999;
+}
+
+table.RecordsTableAns .entNum{
+    width: 10%;
+}
+
+table.RecordsTableAns .SDNName{
+    width: 30%;
+    text-wrap: none;
+}
+
+table.RecordsTableAns .Program{
+    width: 10%;
+    text-wrap: none;
+}
+
+table.RecordsTableAns .Remarks{
+    width: 50%;
+    text-wrap: none;
+}
+
+table.ReportTable {
+    font: normal 10pt Arial,Helvetica,sans-serif;
+    width: 750px;
+}
+
+table.ReportTable th{
+    text-align: center;
+    background-color: #999;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+table.ReportTable td{
+    border: 1px solid #999;
+}
+
+table.ReportTable td.ReportData{
+    text-align: right;
+}
+
+table.ReportTable td.ReportTotal{
+    font-weight: bold;
+    color: #0066A4;
+}
+
+.WithAdverse {
+    background-color:  #FBC2C4;
+}
+
+.OtherStudies {
+    background-color:#000;
+    color:#FFF;
+    padding: 5px;
+    display:inline;
+    font-weight: bold;
+}
+
+.OtherStudies a {
+    color:#FFF;
+}
+
+.PlainResult {
+    padding-bottom: 5px;
+    padding-top:  5px;
+    display:inline;
+    font-weight: bold;
+}
+
+.AlertResult {
+    background-color:#CC0000;
+    padding-bottom: 5px;
+    padding-top:  5px;
+    display:inline;
+    font-weight: bold;
+}
+
+.MultipleStudies{
+    display:inline;
+    color:red;
+}
+
+.StudiesExpress{
+    display:inline;
+    color:#EA850D;
+}
+
+
+.PageBreak { page-break-before: always; }
+
+
+.InAmendment {
+    background-color:  #FBC2C4;
+}
+
+.WideSummary ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.WideSummary ul li { 
+    padding: 0.8em;
+    display: inline; 
+}
+
+.WideSummary ul li .data { 
+    font-weight: bold;
+    color: #0066A4;
+}
+
+div.loading {
+    background-color: #eee;
+    background-image: url('loading.gif');
+    background-position:  center center;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+div.loading * {
+    opacity: .8;
+}
+
+table {margin-bottom:1.4em;width:100%;border:solid thin #ccc;}
+table .even {background-color: #ddd;}
+table .odd {background-color: #eee;}

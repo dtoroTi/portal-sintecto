@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+    <header>
+        <!--<pdf type='Image' filename='{__pdf->getImagePath()}syv_logo.png' x='10' y='6' />-->
+        <pdf type='Image' filename='{__pdf->getImagePath()}sintecto_logo.png' x='10' y='6' />
+        <pdf type='SetFillColor' r='255' g='255' b='255' />
+        <pdf type='SetFont' font='Arial' style='B' size='10' />
+        <pdf type='Cell' width='196' height='0' txt='NUEVO REPORTE DE CLIENTE PERSONALIZADO' border='0' newLine='1' align='C'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='' size='10' />
+        <pdf type='Cell' width='' height='10'  txt="Nombre: {__s->fullName} [Ref:{__s->code}]" border='0' newLine='1' align='C'  fill='0' />
+        <pdf type='Ln' qty='6'/>
+    </header>
+    <footer>
+        <pdf type='SetY' y='-15'/>
+        <pdf type='SetFont' font='Arial' style='I' size='8' />
+        <pdf type='Cell' width='0' height='20' txt='Píe de página personalizado ... Página {__pdf->PageNo()}/{nb}' border='0' newLine='0' align='C'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='' size='10' />
+    </footer>
+    <body>
+        <pdf type='AddPage'/>
+        <pdf type='SetFont' font='Arial' style='' size='10'/>
+        <pdf type='Cell' width='18' height='+3' txt='Empresa : ' border='TLB' newLine='0' align='L'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='B' size='12'/>
+        <pdf type='Cell' width='45' height='+3' txt='{__s->customer->name}' border='TRB' newLine='0' align='L'  fill='0' />
+        
+        
+        <pdf type='SetFont' font='Arial' style='' size='10'/>
+        <pdf type='Cell' width='20' height='+3' txt='Nombre :' border='TLB' newLine='0' align='L'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='B' size='12'/>
+        <pdf type='Cell' width='45' height='+3' txt='{__s->fullName}' border='TRB' newLine='0' align='L'  fill='0' />
+        
+             
+        <pdf type='SetFont' font='Arial' style='' size='10'/>
+        <pdf type='Cell' width='8' height='+3' txt='ID :' border='TLB' newLine='0' align='L'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='B' size='12'/>
+        <pdf type='Cell' width='0' height='+3' txt='{__s->formatedIdNumber}' border='TRB' newLine='1' align='L'  fill='0' />
+        
+        
+        <pdf type='SetFont' font='Arial' style='' size='10'/>
+        <pdf type='Cell' width='18' height='' txt='Tipo :' border='TLB' newLine='0' align='L'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='B' size='12'/>
+        <pdf type='Cell' width='45' height='' txt='{__s->customerProduct->name}' border='TRB' newLine='0' align='L'  fill='0' />
+                
+        <pdf type='SetFont' font='Arial' style='' size='10'/>
+        <pdf type='Cell' width='25' height='' txt='Solicitado Por :' border='TLB' newLine='0' align='L'  fill='0' />
+        <pdf type='SetFont' font='Arial' style='B' size='12'/>
+        <pdf type='Cell' width='30' height='' txt='{__s->customerUser->name}' border='TB' newLine='0' align='L'  fill='0' />
+        <pdf type='Cell' width='78' height='' txt='{__s->customerFields}' border='TBR' newLine='1' align='L'/>
+
+        <pdf type='SetFont' font='Arial' style='B' size='10'/>
+        <pdf type='SetFillColor' r='153' g='204' b='255' />
+        <pdf type='Cell' width='196' height='' txt='INFORMACIÓN GENERAL' border='1' newLine='1' align='C'  fill='1' />
+        <pdf type='SetFillColor' r='0' g='0' b='0' />
+
+        <pdf type='SetFont' font='Arial' style='' size='10'/>
+        <pdf type='SetFillColor' r='220' g='220' b='220' />
+
+        <pdf type='Cell' width='35' height='' txt='Cargo Actual' border='1' newLine='0' align='L'  fill='1' />
+        <pdf type='Cell' width='63' height='' txt='{__s->actualJob}' border='1' newLine='0' align='L'  fill='0' />
+        <pdf type='Cell' width='35' height='' txt='Cargo al que aspira' border='1' newLine='0' align='L'  fill='1' />
+        <pdf type='Cell' width='63' height='' txt='{__s->applyToPosition}' border='1' newLine='1' align='L'  fill='0' />
+
+        <pdf type='Cell' width='35' height='' txt='Fecha de Nacimiento' border='1' newLine='0' align='L'  fill='1' />
+        <pdf type='Cell' width='63' height='' txt='{__s->birthday}' border='1' newLine='0' align='L'  fill='0' />
+        <pdf type='Cell' width='35' height='' txt='Estado Civil' border='1' newLine='0' align='L'  fill='1' />
+        <pdf type='Cell' width='28' height='' txt='{__s->relationshipStatus->name}' border='1' newLine='0' align='L'  fill='0' />
+        <pdf type='Cell' width='15' height='' txt='Edad' border='1' newLine='0' align='L'  fill='1' />
+        <pdf type='Cell' width='20' height='' txt='{__s->age}' border='1' newLine='0' align='L'  fill='0' />
+
+               
+        <pdf type='Cell' width='10' height='10' txt='' border='' newLine='1' align='L'  fill='0' />
+
+        <pdf type='AssignedPersonSignature' newLine='0' />
+                               
+        <pdf type='Cell' width='10' height='30' txt='' border='' newLine='1' align='L'  fill='0' />
+        
+
+        <pdf type='Cell' width='20' height='' txt='Cédula' border='' newLine='0' align='L'  fill='0' />
+        <pdf type='Documents' name='cedula' width='30' height='30' newLine='0'/>
+        <pdf type='Documents' name='cedula' width='60' height='60' newLine='0'/>
+        <pdf type='Documents' name='cedula' width='90' height='90' newLine='0'/>
+        <pdf type='Cell' width='20' height='' txt='Fin Documento' border='' newLine='0' align='L'  fill='0' />
+        <pdf type='Cell' width='10' height='30' txt='' border='' newLine='1' align='L'  fill='0' /> 
+        
+        
+        <pdf type='Cell' width='10' height='30' txt='' border='' newLine='1' align='L'  fill='0' />
+
+        <pdf type='Cell' width='' height='30' txt='TODAS LAS SECCIONES' border='' newLine='1' align='C'  fill='0' />
+        
+        <pdf type='Sections'/>
+
+        <pdf type='Cell' width='' height='30' txt='SOLO UNA SECCION' border='' newLine='1' align='C'  fill='0' />
+        <pdf type='Sections' name='Compliance'/>
+
+        <pdf type='Documents' name='documentoPDF'/>
+        
+    </body>
+</report>

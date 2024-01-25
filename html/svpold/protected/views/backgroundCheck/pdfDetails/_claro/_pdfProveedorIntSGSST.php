@@ -1,0 +1,65 @@
+<?php
+    $pdf->AddPage();
+    $pdf->Cell('', '', '', '', 1, 'L');
+    $pdf->SetFillColor(0,66,109);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->MultiCell(170, 0, "INFORMACIÓN SGSST" , 1, 'C', 1, 1, '', '', true);
+    $pdf->Cell('', '', '', '', 1, 'L');
+
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetFillColor(0,66,109);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetFont('Arial', 'B', 9);
+    $pdf->MultiCell(120, 0, "Aspectos Evaluados" , 1, 'L', 1, 0, '', '', true);
+    $pdf->MultiCell(50, 0, "Validación" , 1, 'C', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetFillColor(230,230,230);
+    $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', '', 8);
+    $pdf->MultiCell(120, 0, "1. Sistema de Gestión de Seguridad y salud Ocupacional (SGSSO) implementado" , 1, 'L', 1, 0, '', '', true);
+    $pdf->MultiCell(50, 0, $XMLQuestionResult['sgssst_1'] , 1, 'C', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', '', 8);
+    $pdf->MultiCell(120, 0, "2. Presentó accidentes fatales o graves en el último año" , 1, 'L', 1, 0, '', '', true);
+    $pdf->MultiCell(50, 0, $XMLQuestionResult['sgssst_2'] , 1, 'C', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetFillColor(230,230,230);
+    $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', '', 8);
+    $pdf->MultiCell(120, 0, "3. Política de inclusión y contratación de personas discapacitadas" , 1, 'L', 1, 0, '', '', true);
+    $pdf->MultiCell(50, 0, $XMLQuestionResult['sgssst_3'] , 1, 'C', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', '', 8);
+    $pdf->MultiCell(120, 0, "4. Realiza acciones que estudien el nivel de satisfacción de los empleados durante el desempeño" , 1, 'L', 1, 0, '', '', true);
+    $pdf->MultiCell(50, 0, $XMLQuestionResult['sgssst_4'] , 1, 'C', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetFillColor(230,230,230);
+    $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', '', 8);
+    $pdf->MultiCell(120, 0, "5. Cumple con obligaciones laborales de acuerdo a países donde opera" , 1, 'L', 1, 0, '', '', true);
+    $pdf->MultiCell(50, 0, $XMLQuestionResult['sgssst_5'] , 1, 'C', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255);
+    $pdf->SetTextColor(255,255,255);
+    $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', '', 8);
+
+
+    $ansComments = $backgroundCheck->getVerificationSection(76)->comments;
+
+    $pdf->SetFont('Arial', 'B', 9);
+    $pdf->Cell('', '', '', '', 1, 'L');
+    $pdf->SetFillColor(50,50,50); $pdf->SetTextColor(255,255,255);
+    $pdf->MultiCell(170, 0, "Comentarios" , 1, 'L', 1, 1, '', '', true);
+    $pdf->SetFillColor(255,255,255); $pdf->SetTextColor(0,0,0);
+    $pdf->SetFont('Arial', 'I', 9);
+    $pdf->MultiCell(170, 0, $ansComments , 1, 'L', 1, 1, '', '', true);
+    $pdf->Cell('', '', '', '', 1, 'L');

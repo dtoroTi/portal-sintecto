@@ -1,0 +1,41 @@
+#Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+#RewriteBase /
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+ErrorDocument 503 /mantenimiento/index.html
+RewriteCond %{DOCUMENT_ROOT}/maintenance -f
+RewriteCond %{REQUEST_URI} !/mantenimiento/index.html$
+RewriteCond %{REQUEST_URI} !/mantenimiento/js/script.js$
+RewriteCond %{REQUEST_URI} !/mantenimiento/js/modernizr.custom.js$
+RewriteCond %{REQUEST_URI} !/mantenimiento/js/jquery.countdown.js$
+RewriteCond %{REQUEST_URI} !/mantenimiento/images/support.png$
+RewriteCond %{REQUEST_URI} !/mantenimiento/images/sintecto.png$
+RewriteCond %{REQUEST_URI} !/mantenimiento/images/home.png$
+RewriteCond %{REQUEST_URI} !/mantenimiento/images/download.png$
+RewriteCond %{REQUEST_URI} !/mantenimiento/images/main-content-pattern.png$
+RewriteCond %{REQUEST_URI} !/mantenimiento/images/body-pattern.png$
+RewriteCond %{REQUEST_URI} !/mantenimiento/fonts/stylesheet.css$
+RewriteCond %{REQUEST_URI} !/mantenimiento/fonts/League_Gothic-webfont.woff$
+RewriteCond %{REQUEST_URI} !/mantenimiento/fonts/League_Gothic-webfont.ttf$
+RewriteCond %{REQUEST_URI} !/mantenimiento/fonts/League_Gothic-webfont.svg$
+RewriteCond %{REQUEST_URI} !/mantenimiento/fonts/League_Gothic_webfont.eot$
+RewriteCond %{REQUEST_URI} !/mantenimiento/css/style.css$
+RewriteCond %{REQUEST_URI} !/mantenimiento/css/reset.css$
+RewriteCond %{REQUEST_URI} !/mantenimiento/css/ie.css$
+
+RewriteCond %{REMOTE_ADDR} !^186\.28\.98\.216
+RewriteCond %{REMOTE_ADDR} !^181\.59\.241\.38
+RewriteCond %{REMOTE_ADDR} !^186\.145\.91\.60
+
+RewriteRule ^.*$ / [R=503,L]
+
+php_value display_errors 1
+php_value display_startup_errors 1

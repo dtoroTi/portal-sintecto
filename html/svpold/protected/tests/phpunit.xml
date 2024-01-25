@@ -1,0 +1,33 @@
+<phpunit bootstrap="bootstrap.php"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false"
+>
+
+  <selenium>
+    <!-- <browser name="Firefox" browser="*firefox c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 9\firefox.exe" host="boekitest"
+    port="4444"
+    timeout="30000"/> -->
+
+<!--
+    <browser 
+      name="Firefox" 
+      browser="*firefox c:\Program Files (x86)\Mozilla Firefox\firefox.exe" 
+      host="boekitest"
+      port="4444"
+      timeout="30000"
+/>
+    -->
+    
+    <browser name="Chrome" 
+    browser="*googlechrome C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" 
+    host="boekitest"
+    port="4444"
+    timeout="30000"
+    
+    /> 
+  </selenium>
+
+</phpunit>

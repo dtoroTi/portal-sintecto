@@ -1,0 +1,11 @@
+assets/*
+!assets/README.txt
+protected/runtime/*
+!protected/runtime/README.txt
+protected/config/*
+!protected/config/default.console.php
+!protected/config/default.main.php
+protected/models/basic
+assets/README\.txt
+
+protected/runtime/

@@ -1,0 +1,51 @@
+<?php  
+
+Yii::app()->clientScript->registerScript('search', "
+$('.WithoutAnnotation').click(function(){
+        var comments=$('#verificationSection_" . $verificationSection->id . "_comments');
+        if (comments){
+          comments.val('" . DetailRegister::WITHOUT_ADVERSE . "');
+          $(this).parents('form:first').submit();          
+        }
+	return false;
+});
+
+$('.WithAnnotation').click(function(){
+        var comments=$('#verificationSection_" . $verificationSection->id . "_comments');
+        if (comments && confirm('Esta seguro que presenta adversos?')){
+          comments.val('" . DetailRegister::WITH_ADVERSE . "');
+          $(this).parents('form:first').submit();
+        }
+	return false;
+});
+
+
+");
+
+?>
+
+<?php echo CHtml::button('Sin Adversos',array('class'=>'WithoutAdverse')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<?php echo CHtml::button('Con Adversos',array('class'=>'WithAdverse')); ?>
+
+
+<div class="SvpTable" style="">
+   <?php foreach ($verificationSection->detailRegisters as $register): ?>
+    <?php
+    echo $this->renderPartial('/detailRegister/_verificationDetail', array(
+        'verificationSection' => $verificationSection,
+        'register' => $register,
+    ));
+    ?>
+  <?php endforeach; ?>
+  <?php
+  if ($verificationSection->backgroundCheck->canUpdate){
+    $register = new DetailRegister();
+    /*echo $this->renderPartial('/detailRegister/_verificationDetail', array(
+        'verificationSection' => $verificationSection,
+        'register' => $register,
+    ));*/
+  }
+  ?>
+
+</div>
