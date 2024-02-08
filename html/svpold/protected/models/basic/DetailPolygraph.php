@@ -107,7 +107,7 @@ class DetailPolygraph extends SVPActiveRecord {
     }
   }
 
-  public function getComentAdvs($idSection, $val) {
+  public function getComentPolygraph($idSection, $val) {
     $models = VerificationSection::model()->findByAttributes(['id'=>$idSection]);
 
     // Eliminar comentario existente
