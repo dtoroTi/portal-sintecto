@@ -1,18 +1,15 @@
 <?php
 
-class m240129_164112_TablaTipoPqr extends CDbMigration
+class m240206_143829_campoTypeDoc extends CDbMigration
 {
 	public function up()
 	{
-		$this->createTable('ses_TipoPqr', array(
-			'id'=>'pk',
-			'tipoReclamo'=>'int'
-		),'ENGINE=InnoDB DEFAULT CHARSET=utf8');
-
+		$this->addColumn("ses_DetailShareholder", "typeDoc", "varchar(5)");
 	}
 
 	public function down()
 	{
+		echo "m240206_143829_campoTypeDoc does not support migration down.\n";
 		return false;
 	}
 

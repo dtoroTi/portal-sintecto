@@ -33,4 +33,14 @@ class DetailPolygraphController extends Controller
 		);
 	}
 	*/
+	public function ActionComentAdvs($idSection, $val){
+
+		$adversos = new DetailPolygraph();
+		$adversos->getComentAdvs($idSection, $val);
+		
+		$models = VerificationSection::model()->findByAttributes(['id'=>$idSection]);
+		$url = $this->createUrl('/backgroundCheck/update/', array('code' => $models->backgroundCheck->code)) . "&activeTab={$idSection}";
+		$this->redirect($url, true);
+	
+	}
 }

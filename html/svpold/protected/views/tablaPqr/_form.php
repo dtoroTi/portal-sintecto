@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form wide">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tabla-pqr-form',
@@ -23,11 +23,11 @@
         <?php echo $form->labelEx($model, 'nombreId'); ?>
         <?php
         echo $form->dropdownList($model, //
-                'nombreId', //
-                CHtml::listData(//
-                        User::model()->findAll(array('order' => 'firstName')), //
-                        'id', //
-                        'firstName'));
+            'nombreId', //
+            CHtml::listData(//
+                    User::model()->findAll(array('order' => 'firstName')), //
+                    'id', //
+                    'summaryLine'),array('prompt' => '...'));
         ?>
         <?php echo $form->error($model, 'nombreId'); ?>
     </div>
@@ -36,11 +36,11 @@
         <?php echo $form->labelEx($model, 'tipoReclamoId'); ?>
         <?php
         echo $form->dropdownList($model, //
-                'tipoReclamoId', //
-                CHtml::listData(//
-                        TipoPqr::model()->findAll(array('order' => 'tipoReclamo')), //
-                        'id', //
-                        'tipoReclamo'));
+            'tipoReclamoId', //
+            CHtml::listData(//
+                    TipoPqr::model()->findAll(array('order' => 'tipoReclamo')), //
+                    'id', //
+                    'tipoReclamo'),array('prompt' => '...'));
         ?>
         <?php echo $form->error($model, 'tipoReclamoId'); ?>
     </div>
@@ -57,28 +57,26 @@
 		<?php echo $form->error($model,'descripcion'); ?>
 	</div>
 
-	<div class="row">
+    <div class="row">
         <?php echo $form->labelEx($model, 'fechaReclamo'); ?>
-        <?php
-        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-            'name' => 'VisitInvoiceDate[fechaReclamo]',
-            'value' => $model->fechaReclamo,
-			'id'=>'fechaReclamo',
-            // additional javascript options for the date picker plugin
-            'options' => array(
-                'showAnim' => 'fold',
-                'buttonText' => '...',
-                'dateFormat' => 'yy-mm-dd',
-                'showButtonPanel' => true,
-                'changeYear' => true,
-                'changeMonth' => true,
-            ),
-            'htmlOptions' => array(
-                'style' => 'height:20px;',
-            ),
-        ));
+        <?php 
+            $this->widget('jqueryDateTime', array(
+                'name' => 'TablaPqr[fechaReclamo]',
+                'value' => $model->fechaReclamo,
+                'id' => 'fechaReclamo',
+                // additional javascript options for the date picker plugin
+                'options' => [
+                    'showAnim' => 'fold',
+                    'buttonText' => '...',
+                    'format' => 'Y-m-d H:i:s',
+                    'lang' => 'es',
+                    'showButtonPanel' => true,
+                ],
+                'htmlOptions' => array(
+                    'style' => 'width_10em;'
+                ),
+            ))
         ?>
-        <?php echo $form->error($model, 'fechaReclamo'); ?>
     </div>
 
 	<div class="row">
@@ -87,28 +85,26 @@
 		<?php echo $form->error($model,'estadoReclamo'); ?>
 	</div>
 
-	<div class="row">
+    <div class="row">
         <?php echo $form->labelEx($model, 'fechaRespuesta'); ?>
-        <?php
-        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-            'name' => 'VisitInvoiceDate[fechaRespuesta]',
-            'value' => $model->fechaRespuesta,
-			'id'=>'fechaRespuesta',
-            // additional javascript options for the date picker plugin
-            'options' => array(
-                'showAnim' => 'fold',
-                'buttonText' => '...',
-                'dateFormat' => 'yy-mm-dd',
-                'showButtonPanel' => true,
-                'changeYear' => true,
-                'changeMonth' => true,
-            ),
-            'htmlOptions' => array(
-                'style' => 'height:20px;',
-            ),
-        ));
+        <?php 
+            $this->widget('jqueryDateTime', array(
+                'name' => 'TablaPqr[fechaRespuesta]',
+                'value' => $model->fechaRespuesta,
+                'id' => 'fechaRespuesta',
+                // additional javascript options for the date picker plugin
+                'options' => [
+                    'showAnim' => 'fold',
+                    'buttonText' => '...',
+                    'format' => 'Y-m-d H:i:s',
+                    'lang' => 'es',
+                    'showButtonPanel' => true,
+                ],
+                'htmlOptions' => array(
+                    'style' => 'width_10em;'
+                ),
+            ))
         ?>
-        <?php echo $form->error($model, 'fechaRespuesta'); ?>
     </div>
 
 	<div class="row buttons">

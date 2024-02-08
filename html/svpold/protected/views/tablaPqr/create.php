@@ -3,7 +3,7 @@
 /* @var $model TablaPqr */
 
 $this->breadcrumbs=array(
-	'Tabla Pqrs'=>array('index'),
+	'Tabla Pqrs'=>array('admin'),
 	'Create',
 );
 

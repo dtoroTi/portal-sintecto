@@ -117,7 +117,8 @@ class Controller extends CController {
                         'document', 'sectionTypeQuestion', 'activityType', 'event', 'contact',
                         'customerGroup', 'invoice', 'detailCompany',
                         'detailShareholder', 'product','pdfReportType','verificationSectionGroup','serviceResponse', 'attachmentFile', 'sendmassivecont', 'updateRegOFAC', 'sendResult','testAPI', 'qualityPorc', 'surveyLink', 'requestsSAC', 'candidateCalls', 'visitInvoiceDate', 'invoiceVisitCost', 'invoiceVisit', 'invoiceVisitDetail', 'notAssignmassive', 'userSenior', 'seniorAssignment', 'assignSeniorExport', 'miPlanilla','dynamicFormJSON','sendMassiveRecover','updateValiduntilFDRecover', 'sendmassiveRecover', 'studyStart', 'svpFile', 'fileAttachment',
-                        'detailFinancial', 'agreements', 'sendEmail', 'role', 'permission', 'roleHasPermission'
+                        'detailFinancial', 'agreements', 'sendEmail', 'role', 'permission', 'roleHasPermission',
+                        'tablaPqr', 'tipoPqr', 'detailPolygraph'
                     ),
                 ),
                 array('deny', // deny all users
@@ -356,6 +357,21 @@ class Controller extends CController {
         7 => 'Servicio al Cliente',
         8 => 'Calidad',
         9 => 'Servicios Compartidos',
+    );
+
+    static public $optionsEstadoReclamo = array (
+        '' => '--',
+        'Pendiente' => 'Pendiente',
+        'Proceso' => 'Proceso',
+        'Finalizado' => 'Finalizado',
+    );
+
+    static public $typeDocument = array (
+        '' => '--',
+        'CC' => 'Cedula',
+        'NIT' => 'Nit',
+        'TI' => 'Tarjeta Identidad',
+        'RC' => 'Registro Civil',
     );
 
     /**

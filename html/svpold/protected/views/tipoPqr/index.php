@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create TipoPqr', 'url'=>array('create')),
-	array('label'=>'Manage TipoPqr', 'url'=>array('admin')),
+	array('label'=>'Manage TipoPqr', 'url'=>array('index')),
 );
 ?>
 

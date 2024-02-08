@@ -340,6 +340,26 @@ class AppMenu
                             ]],
                     ],
                 ],
+                [
+                    'label' => 'Quejas PQR',
+                    'visible' => Yii::app()->user->isSuperAdmin,
+                    'items' => [
+                        [
+                            'label' => 'Quejas y Reclamos',
+                            'items' => [
+                                ['label' => 'Listado de quejas y reclamos', 'url' => ['tablaPqr/admin']],
+                                ['label' => 'Crear queja y reclamo', 'url' => ['tablaPqr/create']],
+                            ],
+                        ],
+                        [
+                            'label' => 'Tipos de Quejas y Reclamos',
+                            'items' => [
+                                ['label' => 'Listado tipos de quejas y reclamos', 'url' => ['tipoPqr/admin']],
+                                ['label' => 'Crear tipo de queja y reclamo', 'url' => ['tipoPqr/create']],
+                            ],
+                        ],     
+                    ],
+                ],
                 ['label' => 'Inicio', 'url' => ['site/login'], 'visible' => Yii::app()->user->isGuest],
                 ['label' => 'Cerrar Sesión', 'url' => ['/site/logout'], 'visible' => Yii::app()->user->isValidUser],
                 ['label' => 'Ayuda',

@@ -3,8 +3,8 @@
 /* @var $model TipoPqr */
 
 $this->breadcrumbs=array(
-	'Tipo Pqrs'=>array('index'),
-	$model->id,
+	'Tipo Pqrs'=>array('admin'),
+	CHtml::encode($model->id),
 );
 
 $this->menu=array(

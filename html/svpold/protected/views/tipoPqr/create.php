@@ -1,12 +1,12 @@
 <?php
 
 $this->breadcrumbs=array(
-	'Tipo Pqrs'=>array('index'),
+	'Tipo Pqrs'=>array('admin'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List TipoPqr', 'url'=>array('index')),
+	array('label'=>'List TipoPqr', 'url'=>array('admin')),
 	array('label'=>'Manage TipoPqr', 'url'=>array('admin')),
 );
 ?>

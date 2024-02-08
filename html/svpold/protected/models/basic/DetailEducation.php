@@ -26,6 +26,7 @@
  * @property integer $book
  * @property integer $minute
  * @property integer $email
+ * @property string $contactCharge
  * The followings are the available model relations:
  * @property VerificationSection $verificationSection
  * @property Verification $verification
@@ -71,6 +72,7 @@ class DetailEducation extends SVPActiveRecord {
         array('folio, book, minute', 'numerical', 'integerOnly'=>true),
         array('folio, book, minute', 'length', 'allowEmpty'=>true),
         array('graduationYear','numerical', 'allowEmpty'=>true, 'integerOnly'=>true,'min'=>1930,'max'=>$actualYear,'tooSmall'=>'Debe ser mayor o igual a 1930','tooBig'=>'Debe anterior o igual a '.$actualYear),
+        array('contactCharge', 'length', 'max'=>255),
         // The following rule is used by search().
         // Please remove those attributes that should not be searched.
         array('id, verificationSectionId, verificationResultId, educationTypeId, institution, tel, city, country, startedOn, finishedOn, title, stillStuding, didObtainDiploma, comments, graduationYear, email', 'safe', 'on' => 'search'),

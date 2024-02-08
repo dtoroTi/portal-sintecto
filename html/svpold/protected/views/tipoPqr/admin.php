@@ -3,7 +3,7 @@
 /* @var $model TipoPqr */
 
 $this->breadcrumbs=array(
-	'Tipo Pqrs'=>array('index'),
+	'Tipo Pqrs'=>array('admin'),
 	'Manage',
 );
 

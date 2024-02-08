@@ -108,7 +108,7 @@
       ?>
     </td>
     <td>
-      Contacto:
+      Nombre de Contacto:
     </td>
     <td>
       <?php
@@ -121,6 +121,17 @@
   </tr>
   <!--COMIENZO NUEVOS CAMPOS-->
   <tr>
+    <td>
+        Cargo de Contacto:
+      </td>
+      <td>
+        <?php
+        echo CHtml::textField('verificationSection' .
+                '[' . $verificationSection->id . ']' .
+                '[_details]' .
+                '[' . ($study->isNewRecord ? 'new' : $study->id) . '][contactCharge]', $study->contactCharge, ['class'=>'select_ed_contactCharge_'.($study->isNewRecord ? 'new' : $study->id)]);
+        ?>
+      </td>
     <td>
       Registro:
     </td>
@@ -154,6 +165,10 @@
               '[' . ($study->isNewRecord ? 'new' : $study->id) . '][book]', $study->book);
       ?>
     </td>
+  </tr>
+
+  <!--FIN NUEVOS CAMPOS-->
+  <tr>
     <td>
       Acta:
     </td>
@@ -165,10 +180,6 @@
               '[' . ($study->isNewRecord ? 'new' : $study->id) . '][minute]', $study->minute);
       ?>
     </td>
-  </tr>
-
-  <!--FIN NUEVOS CAMPOS-->
-  <tr>
   <td>
       Email:
     </td>

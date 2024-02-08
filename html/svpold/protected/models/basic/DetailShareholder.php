@@ -25,6 +25,7 @@
  * @property integer $compliance
  * @property integer $bDeudoresMorosos
  * @property integer $laft
+ * @property string $typeDoc
  *
  * The followings are the available model relations:
  * @property VerificationResult $verificationResult
@@ -63,6 +64,7 @@ class DetailShareholder extends CActiveRecord {
             array('compliance','safe'),
             array('bDeudoresMorosos','safe'),
             array('laft,','safe'),
+            array('typeDoc', 'length', 'max'=>5),
 
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
@@ -94,6 +96,7 @@ class DetailShareholder extends CActiveRecord {
             'verificationResultId' => 'Verification Result',
             'firstName' => 'Nombre',
             'lastName' => 'Apellido/Empresa',
+            'typeDoc' => 'Tipo de Documento',
             'idNumber' => 'Num. ID',
             'participation' => 'Participación',
             'isCompany' => 'Es Empresa',
@@ -139,6 +142,7 @@ class DetailShareholder extends CActiveRecord {
         $criteria->compare('verificationResultId', $this->verificationResultId);
         $criteria->compare('firstName', $this->firstName, true);
         $criteria->compare('lastName', $this->lastName, true);
+        $criteria->compare('typeDoc', $this->typeDoc, true);
         $criteria->compare('idNumber', $this->idNumber, true);
         $criteria->compare('participation', $this->participation, true);
         $criteria->compare('isCompany', $this->isCompany);

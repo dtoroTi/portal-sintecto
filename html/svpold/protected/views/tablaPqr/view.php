@@ -2,9 +2,9 @@
 /* @var $this TablaPqrController */
 /* @var $model TablaPqr */
 
-$this->breadcrumbs=array(
-	'Tabla Pqrs'=>array('index'),
-	$model->id,
+$this->breadcrumbs = array(
+	'Tabla Pqrs' => array('admin'),
+	CHtml::encode($model->nombreId),
 );
 
 $this->menu=array(
@@ -16,14 +16,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>View TablaPqr #<?php echo $model->id; ?></h1>
+<h1>View TablaPqr #<span id="tablaPqrId"></span><?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'nombreId',
-		'tipoReclamoId',
+		array(
+			'label'=>'Nombre Cliente',
+			'value'=>$model->user->firstName . ' ' . $model->user->lastName,
+		),
+		'tipoPqr.tipoReclamo',
 		'nota',
 		'descripcion',
 		'fechaReclamo',

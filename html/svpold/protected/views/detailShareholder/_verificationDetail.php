@@ -18,6 +18,19 @@
                     '[' . ($person->isNewRecord ? 'new' : $person->id) . '][lastName]', $person->lastName);
             ?>
         </td>
+        <td><?php echo CHtml::activeLabel($person, 'typeDoc'); ?></td>
+        <td>
+            <?php
+            echo CHtml::dropDownList(
+                    'verificationSection' . 
+                    '[' . $verificationSection->id . ']' . 
+                    '[_details]' . 
+                    '[' . ($person->isNewRecord ? 'new' : $person->id) . '][typeDoc]'
+                    , // 
+                    $person->typeDoc, //
+                    Controller::$typeDocument);
+            ?> 
+        </td>
         <td><?php echo CHtml::activeLabel($person, 'idNumber'); ?></td>
         <td>
             <?php
@@ -27,6 +40,10 @@
                     '[' . ($person->isNewRecord ? 'new' : $person->id) . '][idNumber]', $person->idNumber);
             ?> 
         </td>
+        
+    </tr>
+    
+    <tr>
         <td><?php echo CHtml::activeLabel($person, 'participation'); ?></td>
         <td>
             <?php
@@ -35,11 +52,7 @@
                     '[_details]' .
                     '[' . ($person->isNewRecord ? 'new' : $person->id) . '][participation]', $person->participation, array('size', '5em'));
             ?> %
-        </td>
-    </tr>
-
-    <tr>
-
+        </td>      
         <td><?php echo CHtml::activeLabel($person, 'isCompany'); ?></td>
         <td>
             <?php
@@ -76,6 +89,12 @@
                     Controller::$optionsYesNoNA);
             ?>
         </td>
+        
+    </tr>
+    <?php
+     //  if ($verificationSection->backgroundCheck->customerId != 298):
+    ?>
+    <tr>
         <td><?php echo CHtml::activeLabel($person, 'hasAdverseReference'); ?></td>
         <td>
             <?php
@@ -89,11 +108,6 @@
                     Controller::$optionsYesNoNA);
             ?>
         </td>
-    </tr>
-    <?php
-     //  if ($verificationSection->backgroundCheck->customerId != 298):
-    ?>
-    <tr>
         <td><?php echo CHtml::activeLabel($person, 'managepublicresources'); ?></td>
         <td>
             <?php
@@ -133,6 +147,9 @@
                     Controller::$optionsYesNoNA);
             ?>
         </td>
+    </tr>
+
+    <tr>
         <td><?php echo CHtml::activeLabel($person, 'Boe'); ?></td>
         <td>
             <?php
@@ -146,8 +163,6 @@
                     Controller::$optionsYesNoNA);
             ?>
         </td>
-    </tr>
-    <tr>
         <td><?php echo CHtml::activeLabel($person, 'entControl'); ?></td>
         <td>
             <?php
@@ -187,6 +202,9 @@
                     Controller::$optionsYesNoNA);
             ?>
         </td>
+    </tr>
+    
+    <tr>
         <td><?php echo CHtml::activeLabel($person, 'empresasFicticias'); ?></td>
         <td>
             <?php
@@ -200,10 +218,7 @@
                     Controller::$optionsYesNoNA);
             ?>
         </td>
-        
-    </tr>
-    <tr>
-    <td><?php echo CHtml::activeLabel($person, 'bDeudoresMorosos'); ?></td>
+        <td><?php echo CHtml::activeLabel($person, 'bDeudoresMorosos'); ?></td>
         <td>
             <?php
             echo CHtml::dropDownList(//

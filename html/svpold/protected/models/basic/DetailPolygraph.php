@@ -107,4 +107,21 @@ class DetailPolygraph extends SVPActiveRecord {
     }
   }
 
+  public function getComentAdvs($idSection, $val) {
+    $models = VerificationSection::model()->findByAttributes(['id'=>$idSection]);
+
+    // Eliminar comentario existente
+    $models->comments = '';
+
+    if($val==0){
+        $models->comments="Sin alteraciones en poligrafía.";
+    }else if($val==1){
+        $models->comments="Con alteraciones en poligrafía.";
+    }
+    $models->update();
+
+    WebUser::logAccess("Se realizo la actualización del comentario en la pestaña poligrafo.", $models->backgroundCheck->code);
+    return true;
+  }
+
 }

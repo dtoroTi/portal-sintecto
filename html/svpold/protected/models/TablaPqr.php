@@ -50,8 +50,8 @@ class TablaPqr extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Pqr' => array(self::BELONGS_TO, 'Pqr', 'nombreId'),
-			'TipoPqr' => array(self::BELONGS_TO, 'TipoPqr', 'tipoReclamoId'),
+			'user' => array(self::BELONGS_TO, 'User', 'nombreId'),
+			'tipoPqr' => array(self::BELONGS_TO, 'TipoPqr', 'tipoReclamoId'),
 		);
 	}
 
@@ -66,9 +66,9 @@ class TablaPqr extends CActiveRecord
 			'tipoReclamoId' => 'Tipo Reclamo',
 			'nota' => 'Nota',
 			'descripcion' => 'Descripcion',
-			'fechaReclamo' => 'Fecha Reclamo',
+			'fechaReclamo' => 'Fecha y Hora del Reclamo',
 			'estadoReclamo' => 'Estado Reclamo',
-			'fechaRespuesta' => 'Fecha Respuesta',
+			'fechaRespuesta' => 'Fecha y hora de Respuesta',
 		);
 	}
 

@@ -39,22 +39,23 @@ foreach ($verificationSection->detailStudies as $study) {
   $pdf->Cell(37, '', 'Continua Estudiando', 1, 0, 'L', 1);
   $pdf->Cell(17, '', Controller::stringYesNo($study->stillStuding), 1, 1, 'C');
 
-
   $pdf->Cell(12, '', 'Título', 1, 0, 'L', 1);
   $pdf->Cell(130, '', CHtml::encode($study->title), 1, 0, 'L');
   $pdf->Cell(37, '', 'Obtuvo Título', 1, 0, 'L', 1);
   $pdf->Cell(17, '', Controller::stringYesNo($study->didObtainDiploma), 1, 1, 'C');
-
 
   $pdf->Cell(12, '', 'País', 1, 0, 'L', 1);
   $pdf->Cell(28, '', CHtml::encode($study->country), 1, 0, 'L');
   $pdf->Cell(14, '', 'Ciudad', 1, 0, 'L', 1);
   $pdf->Cell(28, '', CHtml::encode($study->city), 1, 0, 'L');
   $pdf->Cell(12, '', 'Tel.', 1, 0, 'L', 1);
-  $pdf->Cell(22, '', CHtml::encode($study->tel), 1, 0, 'L');
-  $pdf->Cell(18, '', 'Contacto', 1, 0, 'L', 1);
-  $pdf->Cell(62, '', CHtml::encode($study->contact), 1, 1, 'L');
+  $pdf->Cell(102, '', CHtml::encode($study->tel), 1, 1, 'C');
 
+  $pdf->Cell(33, '', 'Nombre de Contacto', 1, 0, 'L', 1);
+  $pdf->Cell(65, '', CHtml::encode($study->contact), 1, 0, 'L');
+  $pdf->Cell(33, '', 'Cargo de Contacto', 1, 0, 'L', 1);
+  $pdf->Cell(65, '', CHtml::encode($study->contactCharge), 1, 1, 'C');
+  
   $pdf->Cell(14, '', 'Registro', 1, 0, 'L', 1);
   $pdf->Cell(35, '', CHtml::encode($study->registry), 1, 0, 'L');
   $pdf->Cell(14, '', 'Folio', 1, 0, 'L', 1);

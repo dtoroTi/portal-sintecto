@@ -2,13 +2,14 @@
 /* @var $this TablaPqrController */
 /* @var $model TablaPqr */
 
-$this->breadcrumbs=array(
-    'Tabla Pqrs'=>array('index'),
+$this->breadcrumbs = array(
+    'Tabla Pqrs' => array('admin'),
     'Manage',
 );
 
 $this->menu=array(
-    array('label'=>'Create Reclamo', 'url'=>array('create')),
+    array('label' => 'List Reclamo', 'url' => array('index')),
+    array('label'=> 'Create Reclamo', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -47,8 +48,18 @@ o <b>=</b>) al principio de cada uno de sus valores de búsqueda para especifica
     'filter'=>$model,
     'columns'=>array(
         'id',
-        'nombreId',
-        'tipoReclamoId',
+        'nombreId' => array(
+            'name' => 'user.summaryLine',
+            'header' => 'Nombre Usuario',
+            'filter' => CHtml::activeDropDownList($model, 'nombreId', CHtml::listData(User::model()->findAll(array('order' => 'id')), 'id', 'summaryLine'), array('prompt' => '...')),
+            'htmlOptions' => array('width' => '200px'),
+        ),
+        'tipoReclamoId' => array(
+            'name' => 'tipoPqr.tipoReclamo',
+            'header' => 'Tipo Reclamo',
+            'filter' => CHtml::activeDropDownList($model, 'tipoReclamoId', CHtml::listData(TipoPqr::model()->findAll(array('order' => 'id')), 'id', 'tipoReclamo'), array('prompt' => '...')),
+            'htmlOptions' => array('width' => '200px'),
+        ),
         'nota',
         'descripcion',
         'fechaReclamo',

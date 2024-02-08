@@ -43,20 +43,34 @@ if ($verificationSection->backgroundCheck->customerProduct->isCompanySurvey == 1
         }*/
         $pdf->SetTextColor(0);
         $pdf->SetFillColor(230); $pdf->SetFont('Arial', 'B', 8);
-        $pdf->MultiCell(50, 0, "Nombre y Apellido" , 1, 'L', 1, 0, '', '', true);
-        $pdf->MultiCell(25, 0, "No. Identidad"  , 1, 'L', 1, 0, '', '', true);
-        $pdf->MultiCell(25, 0, "Clasificación " , 1, 'L', 1, 0, '', '', true);
-        $pdf->MultiCell(25, 0, "Participación" , 1, 'L', 1, 0, '', '', true);
-        $pdf->MultiCell(50, 0, "Cargo" , 1, 'L', 1, 1, '', '', true);
+        $pdf->MultiCell(46, 8, "Nombre y Apellido" , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(17, 8, "Tipo. Doc" , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(21, 8, "No. Identidad"  , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(21, 8, "Clasificación " , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(21, 8, "Participación" , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(49, 8, "Cargo" , 1, 'L', 1, 1, '', '', true);
 
         $pdf->SetTextColor(0);
         $pdf->SetFillColor(255); $pdf->SetFont('Arial', '', 8);
         //$pdf->MultiCell(45, 0, $person->firstName . " " . $person->lastName  , 1, 'L', 1, 0, '', '', true);
-        $pdf->Cell(50, '', $person->firstName . " " . $person->lastName , 1, 0, 'L', 1);
-        $pdf->MultiCell(25, 0, $person->idNumber , 1, 'L', 1, 0, '', '', true);
-        $pdf->MultiCell(25, 0, $isCompany , 1, 'L', 1, 0, '', '', true);
-        $pdf->MultiCell(25, 0, $person->participation . "%" , 1, 'C', 1, 0, '', '', true);
-        $pdf->MultiCell(50, 0, $person->position , 1, 'L', 1, 1, '', '', true);
+        $pdf->Cell(46, '', $person->firstName . " " . $person->lastName , 1, 0, 'L', 1);
+
+        if ($person->typeDoc == 'CC') {
+            $pdf->SetTextColor(0); $typeDoc = "Cedula";
+        }else if ($person->typeDoc == 'NIT') {
+            $pdf->SetTextColor(0); $typeDoc = "Nit";
+        }else if ($person->typeDoc == 'TI') {
+            $pdf->SetTextColor(0); $typeDoc = "Tarjeta Identidad";
+        }else if ($person->typeDoc == 'RC') {
+            $pdf->SetTextColor(0); $typeDoc = "Registro Civil";
+        }else {
+            $pdf->SetTextColor(0); $typeDoc = "--";
+        };
+        $pdf->MultiCell(17, 8, $typeDoc , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(21, 8, $person->idNumber , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(21, 8, $isCompany , 1, 'L', 1, 0, '', '', true);
+        $pdf->MultiCell(21, 8, $person->participation . "%" , 1, 'C', 1, 0, '', '', true);
+        $pdf->MultiCell(49, 8, $person->position , 1, 'L', 1, 1, '', '', true);
 
         $pdf->SetFont('Arial', '', 4);
         $pdf->SetFillColor(50,50,50); $pdf->SetTextColor(255,255,255);
