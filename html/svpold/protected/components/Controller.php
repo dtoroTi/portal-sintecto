@@ -118,7 +118,7 @@ class Controller extends CController {
                         'customerGroup', 'invoice', 'detailCompany',
                         'detailShareholder', 'product','pdfReportType','verificationSectionGroup','serviceResponse', 'attachmentFile', 'sendmassivecont', 'updateRegOFAC', 'sendResult','testAPI', 'qualityPorc', 'surveyLink', 'requestsSAC', 'candidateCalls', 'visitInvoiceDate', 'invoiceVisitCost', 'invoiceVisit', 'invoiceVisitDetail', 'notAssignmassive', 'userSenior', 'seniorAssignment', 'assignSeniorExport', 'miPlanilla','dynamicFormJSON','sendMassiveRecover','updateValiduntilFDRecover', 'sendmassiveRecover', 'studyStart', 'svpFile', 'fileAttachment',
                         'detailFinancial', 'agreements', 'sendEmail', 'role', 'permission', 'roleHasPermission',
-                        'tablaPqr', 'tipoPqr', 'detailPolygraph'
+                        'tablaPqr', 'tipoPqr', 'detailPolygraph', 'listSuppliers'
                     ),
                 ),
                 array('deny', // deny all users

@@ -1,6 +1,6 @@
 <?php
 
-class m240208_203509_TablaListSuppliers extends CDbMigration
+class m240209_153425_TablaListSuppliers extends CDbMigration
 {
 	public function up()
 	{
@@ -11,15 +11,16 @@ class m240208_203509_TablaListSuppliers extends CDbMigration
 			'document'=>'varchar(255)',
 			'phone'=>'varchar(255)',
 			'email'=>'varchar(255)',
+			'serviceProvidedId'=>'int(10)',
 			'cityService'=>'varchar(255)',
-			'address'=>'varchar(200)',
+			'address'=>'varchar(255)',
 			'price'=>'decimal(10,0)'
 		),'ENGINE=InnoDB DEFAULT CHARSET=utf8');
 	}
 
 	public function down()
 	{
-		echo "m240208_203509_TablaListSuppliers does not support migration down.\n";
+		echo "m240209_153425_TablaListSuppliers does not support migration down.\n";
 		return false;
 	}
 

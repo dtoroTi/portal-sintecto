@@ -109,8 +109,15 @@ class AppMenu
                             'items' => [
                                 ['label' => 'Listado de Contactos Académico', 'url' => ['educationalInstitution/admin']],
                                 ['label' => 'Listado de Contactos Laboral', 'url' => ['jobCompany/admin']],
+                                ['label' => 'Lista de Contactos Proveedores',
+                                    'items' => [
+                                        ['label' => 'Listado proveedores', 'url' => ['listSuppliers/admin']],
+                                        ['label' => 'Crear proveedores', 'url' => ['listSuppliers/create']],
+                                    ]
+                                ],
                                 //array('label' => 'Crear Contacto', 'url' => array('educationalInstitution/create')),
-                            ]],
+                            ]
+                        ],
                     ],
                 ],
                 [
