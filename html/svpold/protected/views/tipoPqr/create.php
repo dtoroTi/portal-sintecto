@@ -11,6 +11,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Tipo De Queja</h1>
+<h1>Adicionar Tipo De Queja</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

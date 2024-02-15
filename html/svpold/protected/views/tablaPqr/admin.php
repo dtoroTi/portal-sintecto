@@ -27,11 +27,11 @@ $('.search-form form').submit(function(){
 
 ?>
 
-<h1>Manage Tabla Pqrs</h1>
+<h1>Quejas y Reclamos</h1>
 
 <p>
-Opcionalmente, puede ingresar un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-o <b>=</b>) al principio de cada uno de sus valores de búsqueda para especificar cómo debe realizarse la comparación.
+Usted puede utilizar alternativamente los operadores (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) al principio de cada valor para especificar que tipo de comparacion desea hacer.
 </p>
 
 

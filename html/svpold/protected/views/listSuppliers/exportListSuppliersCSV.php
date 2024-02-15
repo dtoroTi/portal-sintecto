@@ -4,7 +4,6 @@
 $fp = fopen('php://temp', 'w');
 
 $headers = array(
-    '#',
     'Nombre',
     'Tipo de Documento',
     'Numero de Documento',
@@ -22,7 +21,6 @@ $rows = 0;
 foreach ($exportSuppliersReports as $SuppliersReports) {
 
     $reportRow = array();
-    $reportRow['id'] = $SuppliersReports->id;
     $reportRow['name'] = $SuppliersReports->name;
     $reportRow['typeDoc'] = $SuppliersReports->typeDoc;
     $reportRow['document'] = $SuppliersReports->document;
