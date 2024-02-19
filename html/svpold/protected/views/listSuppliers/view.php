@@ -30,6 +30,6 @@ $this->menu=array(
 		'cityService',
 		'address',
 		'price',
-		'serviceProvidedId',
+		'serviceProvided.name',
 	),
 )); ?>
