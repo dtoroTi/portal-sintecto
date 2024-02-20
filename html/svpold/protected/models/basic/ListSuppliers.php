@@ -135,4 +135,26 @@ class ListSuppliers extends CActiveRecord
 		$reports = ListSuppliers::model()->findAll($criteria);
 		return $reports;
 	}
+
+	public function getTypeDocument() {
+		$ansStr = "";
+		switch($this->typeDoc){
+
+			case 'CC':
+				$pr = "Cedula";
+				break;
+			case 'NIT':
+				$pr = 'Nit';
+				break;
+			case 'TI':
+				$pr = 'Tarjeta Identidad';
+				break;
+			case 'RC':
+				$pr = 'Registro Civil';
+				break;
+		}
+		$ansStr = $pr;
+
+		return $ansStr;
+	}
 }

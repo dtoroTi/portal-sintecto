@@ -53,7 +53,7 @@ class ServiceProvided extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'name' => 'Servicio Prestado',
 		);
 	}
 

@@ -22,7 +22,7 @@ foreach ($exportSuppliersReports as $SuppliersReports) {
 
     $reportRow = array();
     $reportRow['name'] = $SuppliersReports->name;
-    $reportRow['typeDoc'] = $SuppliersReports->typeDoc;
+    $reportRow['typeDoc'] = $SuppliersReports->getTypeDocument();
     $reportRow['document'] = $SuppliersReports->document;
     $reportRow['phone'] = $SuppliersReports->phone;
     $reportRow['email'] = $SuppliersReports->email;

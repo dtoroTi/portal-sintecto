@@ -47,7 +47,12 @@ or <b>=</b>) al principio de cada valor para especificar que tipo de comparacion
 	'columns'=>array(
 		// 'id',
 		'name',
-		'typeDoc',
+		'typeDoc' => array(
+            'name' => 'typeDoc',
+			'value' => '($data->typeDocument)',
+            'filter' => CHtml::activeDropDownList($model, 'typeDoc', Controller::$typeDocument),
+			'htmlOptions' => array('width' => '150px'),
+        ),
 		'document',
 		'phone',
 		'email',

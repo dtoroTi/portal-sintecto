@@ -23,7 +23,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'name',
-		'typeDoc',
+		'typeDoc' => array(
+			'name' => 'typeDoc',
+			'value'=>$model->getTypeDocument(),
+		),
 		'document',
 		'phone',
 		'email',
