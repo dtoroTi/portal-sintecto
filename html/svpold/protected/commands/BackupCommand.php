@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * Clase para realizar copias de seguridad.
+ */
 class BackupCommand extends CConsoleCommand {
+    /**
+     * Realiza una copia de seguridad local.
+     *
+     * @param bool $fullDb Indica si se debe realizar una copia completa de la base de datos.
+     * @return void
+     */
 
     private function localBackup($fullDb) {
+        // Contenido del método...
         $serverName = Yii::app()->params['serverName'];
         $userPath = Yii::app()->params['server'][$serverName]['userPath'];
         $fullBasePath = $userPath . Yii::app()->params['server'][$serverName]['basePath']."../";
@@ -61,7 +71,14 @@ class BackupCommand extends CConsoleCommand {
         passthru($com);
     }
 
+    /**
+     * Ejecuta el comando de copia de seguridad.
+     *
+     * @param array $args Argumentos pasados al comando.
+     * @return void
+     */
     public function run($args) {
+        // Contenido del método...
         $onlyDb = false;
         if (count($args) > 0 && $args[count($args) - 1] == "fullDb") {
             $onlyDb = true;
@@ -89,9 +106,20 @@ class BackupCommand extends CConsoleCommand {
         }
     }
 
+    /**
+     * Obtiene la ayuda para el comando.
+     *
+     * @return string La ayuda para el comando.
+     */
     public function getHelp() {
         return "Usage: \nbackup [server] [fullDb]\n";
     }
+
+    /**
+     * Obtiene el nombre del comando.
+     *
+     * @return string El nombre del comando.
+     */
 
     public function getName() {
         return "backup";

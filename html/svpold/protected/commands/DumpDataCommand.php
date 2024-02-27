@@ -1,7 +1,15 @@
 <?php
 
+/**
+ * Clase DumpDataCommand
+ *
+ * Esta clase maneja el comando para volcar datos en la base de datos.
+ */
 class DumpDataCommand extends CConsoleCommand {
 
+  /**
+   * Ejecuta el comando.
+   */
   public function run() {
     Yii::import('application.models.*');
     Yii::import('application.models.basic.*');
@@ -15,6 +23,11 @@ class DumpDataCommand extends CConsoleCommand {
     $this->addData($data);
   }
 
+  /**
+   * Agrega datos a la base de datos.
+   *
+   * @param array $data Los datos a agregar.
+   */
   public function addData($data) {
     foreach ($data as $rows) {
       $table = $rows['table'];
@@ -25,7 +38,7 @@ class DumpDataCommand extends CConsoleCommand {
           foreach ($row as $attr => $val) {
             if (is_array($val)) {
 
-              // is Reference
+              // es una referencia
               $models = array_keys($val);
               $modelName = $models[0];
               $model = new $modelName();
@@ -51,16 +64,29 @@ class DumpDataCommand extends CConsoleCommand {
     }
   }
 
+  /**
+   * Obtiene la ayuda para el comando.
+   *
+   * @return string El mensaje de ayuda.
+   */
   public function getHelp() {
     return "Usage: \ndumpData \n";
   }
 
+  /**
+   * Obtiene el nombre del comando.
+   *
+   * @return string El nombre del comando.
+   */
   public function getName() {
     return "dumpData";
   }
 
+  /**
+   * Trunca las tablas en la base de datos.
+   */
   public function truncateTables() {
-//        $schema = $args[0];
+    // Código para truncar las tablas...
     $tables = Yii::app()->db->schema->getTables();
     $result = array();
     foreach ($tables as $def) {
@@ -130,7 +156,11 @@ class DumpDataCommand extends CConsoleCommand {
 //    echo $createString . "\n\n" . $dropString;
   }
 
+  /**
+   * Genera el esquema de la base de datos.
+   */
   public function schema() {
+    // Código para generar el esquema de la base de datos...
 //        $schema = $args[0];
     $tables = Yii::app()->db->schema->getTables();
     $result = array();
@@ -190,7 +220,14 @@ class DumpDataCommand extends CConsoleCommand {
     echo $createString . "\n\n" . $dropString;
   }
 
+  /**
+   * Obtiene el tipo de columna.
+   *
+   * @param mixed $col La columna.
+   * @return string El tipo de columna.
+   */
   public function getColType($col) {
+    // Código para obtener el tipo de columna...
     if ($col->isPrimaryKey) {
       return "pk";
     }
