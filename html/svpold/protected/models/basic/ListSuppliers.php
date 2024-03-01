@@ -1,36 +1,73 @@
 <?php
 
 /**
- * This is the model class for table "{{ListSuppliers}}".
+ * Clase ListSuppliers
  *
- * The followings are the available columns in table '{{ListSuppliers}}':
- * @property integer $id
- * @property string $name
- * @property string $typeDoc
- * @property string $document
- * @property string $phone
- * @property string $email
- * @property string $cityService
- * @property string $address
- * @property string $price
- * @property integer $serviceProvidedId
- *
- * The followings are the available model relations:
- * @property ServiceProvided $serviceProvided
+ * Esta clase representa un proveedor de lista y gestiona la información relacionada con los proveedores.
  */
 class ListSuppliers extends CActiveRecord
 {
 	/**
-	 * @return string the associated database table name
-	 */
+     * @var integer Identificador único del proveedor.
+     */
+    public $id;
+
+    /**
+     * @var string Nombre del proveedor.
+     */
+    public $name;
+
+    /**
+     * @var string Tipo de documento del proveedor (CC, NIT, TI, RC, etc.).
+     */
+    public $typeDoc;
+
+    /**
+     * @var string Número de documento del proveedor.
+     */
+    public $document;
+
+    /**
+     * @var string Número de teléfono del proveedor.
+     */
+    public $phone;
+
+    /**
+     * @var string Correo electrónico del proveedor.
+     */
+    public $email;
+
+    /**
+     * @var string Ciudad donde se ofrece el servicio.
+     */
+    public $cityService;
+
+    /**
+     * @var string Dirección del proveedor.
+     */
+    public $address;
+
+    /**
+     * @var string Tarifa del proveedor.
+     */
+    public $price;
+
+    /**
+     * @var integer Identificador del servicio proporcionado por el proveedor.
+     */
+    public $serviceProvidedId;
+
+    /**
+     * @inheritdoc
+     */
 	public function tableName()
 	{
 		return '{{ListSuppliers}}';
 	}
 
 	/**
-	 * @return array validation rules for model attributes.
-	 */
+     * @inheritdoc
+     */
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -48,8 +85,8 @@ class ListSuppliers extends CActiveRecord
 	}
 
 	/**
-	 * @return array relational rules.
-	 */
+     * @inheritdoc
+     */
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related
@@ -60,8 +97,8 @@ class ListSuppliers extends CActiveRecord
 	}
 
 	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
+     * @inheritdoc
+     */
 	public function attributeLabels()
 	{
 		return array(
@@ -79,17 +116,8 @@ class ListSuppliers extends CActiveRecord
 	}
 
 	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
+     * @inheritdoc
+     */
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
@@ -123,6 +151,11 @@ class ListSuppliers extends CActiveRecord
 		return parent::model($className);
 	}
 
+	/**
+     * Obtiene la lista de proveedores para exportar.
+     *
+     * @return array La lista de proveedores para exportar.
+     */
 	public static function getExportListSuppliers(){
 
 		$criteria = new CDbCriteria;
@@ -136,6 +169,11 @@ class ListSuppliers extends CActiveRecord
 		return $reports;
 	}
 
+	/**
+     * Obtiene el tipo de documento formateado del proveedor.
+     *
+     * @return string El tipo de documento formateado.
+     */
 	public function getTypeDocument() {
 		$ansStr = "";
 		switch($this->typeDoc){
